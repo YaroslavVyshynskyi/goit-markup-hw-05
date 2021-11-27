@@ -148,6 +148,7 @@ body {
   padding-bottom: 35px;
   display: flex;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
@@ -236,11 +237,12 @@ body {
   padding: 10px 32px;
   margin: 0 auto;
   display: block;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
 .hero-btn:hover,
 .hero-btn:focus {
-  background: #188ce8;
+  background-color: #188ce8;
 }
 
 /*---------------------FEATURES---------------------*/
@@ -394,6 +396,8 @@ section.features {
   align-items: center;
   justify-content: center;
   color:  #AFB1B8;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-icon {
@@ -443,7 +447,9 @@ section.features {
   border: 1px solid #AFB1B8;
   box-sizing: border-box;
   border-radius: 4px;
-  padding: 16px 32px;  
+  padding: 16px 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .castomers-icon {
@@ -536,6 +542,8 @@ address {
   align-items: center;
   justify-content: center;
   color:  #ffffff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-icon {
@@ -546,6 +554,41 @@ address {
 .footer-social-link:focus {
   background-color: #2196F3;
   color: #ffffff;
+}
+
+/*---------------------BACKDROP---------------------*/
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+}
+
+.modal {
+  width: 528px;
+  height: 581px;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
 }
 
 /*---------------------PORTFOLIO---------------------*/
@@ -575,6 +618,9 @@ address {
   border: transparent;
   border-radius: 4px;
   /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-filter:hover,
@@ -602,11 +648,39 @@ address {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   background: var(--items-background-color);
-  }
+  transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
 
 .portfolio-item:hover,
 .portfolio-item:focus {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(133, 107, 107, 0.25));
+}
+
+.portfolio-item:hover .portfolio-item-toptext {
+  transform: translateY(0);
+}
+
+.portfolio-item-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item-toptext {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  overflow: auto;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-info {
